@@ -41,8 +41,7 @@ apt-get -y update
 /bin/echo debconf shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 apt-get -y install oracle-java7-installer oracle-java7-set-default
 #######################################################################################################################
-
-curl -sSfL http://downloads.mesosphere.io/master/ubuntu/12.04/mesos_0.16.0_amd64.deb --output /tmp/mesos.deb
+curl -sSfL http://downloads.mesosphere.io/master/ubuntu/12.04/mesos_0.19.1-1.0.ubuntu1204_amd64.deb --output /tmp/mesos.deb
 dpkg -i /tmp/mesos.deb
 
 #sudo /usr/local/sbin/mesos-master --zk=zk://192.168.57.10:2181,/etc --ip=192.168.57.10
