@@ -24,17 +24,17 @@ import kafka.utils.{ Logging => AppLogging }
 
 object KafkaFramework extends AppLogging {
 
-  //val defaultSettings = ConfigFactory.parseString("""
-  //  mesos {
-  //    master = "localhost:5050"
-  //  }
-  //""")
+  val defaultSettings = ConfigFactory.parseString("""
+    mesos {
+      master = "localhost:5050"
+    }
+  """)
 
-  //val config = ConfigFactory.load.getConfig("kafka.mesos").withFallback(defaultSettings)
+  val config = ConfigFactory.load.getConfig("kafka.mesos").withFallback(defaultSettings)
 
   val normalizedName = "KafkaFramework"
   val failoverTimeout = 600000 // in milliseconds (10 minutes)
-  val mesosMaster = "zk://192.168.57.10:2181,/etc" //"localhost:5050" //config.getString("mesos.master")
+  val mesosMaster = config.getString("mesos.master")
 
   val frameworkId = FrameworkID.newBuilder.setValue(normalizedName)
 

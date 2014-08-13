@@ -37,7 +37,7 @@ object KafkaMesosFrameworkBuild extends Build {
 // DEPENDENCY VERSIONS
 //////////////////////////////////////////////////////////////////////////////
 
-  val MESOS_VERSION           = "0.16.0"
+  val MESOS_VERSION           = "0.20.0-SNAPSHOT"
   val TYPESAFE_CONFIG_VERSION = "1.0.2"
   val SCALATEST_VERSION       = "2.0.M5b"
 
